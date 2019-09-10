@@ -86,10 +86,9 @@ export default {
       uniqEmail: function(newEmail) {
         if (newEmail === "") return true;
 
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
           setTimeout(() => {
             const value = newEmail !== "test@mail.ru";
-            reject("error");
             resolve(value);
           }, 3000);
         });
