@@ -4,7 +4,7 @@
     <div class="container">
       <h1 class="display-2 text-center">Form control</h1>
       <h2>Email</h2>
-      <form class="pt-3">
+      <form class="pt-3" @submit.prevent="onSubmit">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -25,9 +25,8 @@
             This email is not uniq, try again!
           </div>
         </div>
-      </form>
-      <h2>Password</h2>
-      <form class="pt-3">
+        <h2>Password</h2>
+
         <div class="form-group">
           <label for="password">password</label>
           <input
@@ -42,12 +41,9 @@
             Min password length is {{ $v.password.$params.minLength.min }}. Now
             it`s {{ password.length }}
           </div>
-          <pre></pre>
         </div>
-      </form>
 
-      <h2>Confirm password</h2>
-      <form class="pt-3">
+        <h2>Confirm password</h2>
         <div class="form-group">
           <label for="confirm">Confirm password</label>
           <input
@@ -61,8 +57,14 @@
           <div class="invalid-feedback" v-if="!$v.sameAs">
             Password is not the same
           </div>
-          <pre></pre>
         </div>
+        <button
+          class="btn btn-success btn-lg"
+          type="submit"
+          :disabled="$v.$invalid"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </div>
@@ -79,6 +81,12 @@ export default {
       confirm: ""
     };
   },
+  methods: {
+    onSubmit() {
+      console.log("Email", this.email);
+      console.log("Password", this.password);
+    }
+  },
   validations: {
     email: {
       required,
@@ -90,7 +98,7 @@ export default {
           setTimeout(() => {
             const value = newEmail !== "test@mail.ru";
             resolve(value);
-          }, 3000);
+          }, 1000);
         });
       }
     },
