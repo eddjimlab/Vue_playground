@@ -21,6 +21,9 @@
           <div class="invalid-feedback" v-if="!$v.email.email">
             Email required!!!
           </div>
+          <div class="invalid-feedback" v-if="!$v.email.uniqEmail">
+            This email is not uniq, try again!
+          </div>
         </div>
       </form>
       <h2>Password</h2>
@@ -67,7 +70,6 @@
 
 <script>
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
-
 export default {
   data() {
     return {
@@ -79,7 +81,10 @@ export default {
   validations: {
     email: {
       required,
-      email
+      email,
+      uniqEmail: function(newEmail) {
+        return newEmail !== "test@mail.ru";
+      }
     },
     password: {
       minLength: minLength(6)
