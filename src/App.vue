@@ -70,6 +70,7 @@
 
 <script>
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
+
 export default {
   data() {
     return {
@@ -83,7 +84,15 @@ export default {
       required,
       email,
       uniqEmail: function(newEmail) {
-        return newEmail !== "test@mail.ru";
+        if (newEmail === "") return true;
+
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const value = newEmail !== "test@mail.ru";
+            reject("error");
+            resolve(value);
+          }, 3000);
+        });
       }
     },
     password: {
