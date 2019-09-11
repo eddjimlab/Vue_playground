@@ -3,8 +3,17 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse">
         <div class="navbar-nav">
-          <routerLink class="nav-item nav-link" to="/">Home</routerLink>
-          <routerLink class="nav-item nav-link" to="/cars">Cars</routerLink>
+          <routerLink
+            tag="li"
+            class="nav-item"
+            to="/"
+            exact
+            active-class="active"
+            ><a class="nav-link">Home</a></routerLink
+          >
+          <routerLink tag="li" class="nav-item" to="/cars" active-class="active"
+            ><a class="nav-link">Cars</a></routerLink
+          >
         </div>
       </div>
     </nav>
