@@ -1,9 +1,12 @@
 import VueRouter from "vue-router";
 import Home from "./pages/Home";
-import Cars from "./pages/Cars";
-import Car from "./pages/Car";
-import CarFull from "./pages/CarFull";
-import ErrorComp from "./pages/Error";
+
+const Cars = () =>
+  import(/* webpackChunkName: "group-car" */ "./pages/Cars.vue");
+const Car = () => import(/* webpackChunkName: "group-car" */ "./pages/Car.vue");
+const CarFull = () =>
+  import(/* webpackChunkName: "group-car" */ "./pages/CarFull.vue");
+const ErrorComp = () => import("./pages/Error.vue");
 
 export default new VueRouter({
   routes: [
