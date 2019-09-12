@@ -1,12 +1,18 @@
 <template>
   <div>
-    <h2>Car Name: ford</h2>
-    <h4>Car year: 2016</h4>
+    <h2>Car Name: {{ $route.query.name }}</h2>
+    <h4>Car year: {{ year }}</h4>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    year() {
+      return this.$route.query.year;
+    }
+  }
+};
 </script>
 
 <style lang="scss"></style>

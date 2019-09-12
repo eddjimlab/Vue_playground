@@ -8,10 +8,13 @@
     <routerLink
       class="btn btn btn-info mt-2"
       tag="button"
-      :to="{ name: 'carFull', params: { id: id } }"
+      :to="{
+        name: 'carFull',
+        params: { id: id },
+        query: { name: 'Mazda', year: 2019 }
+      }"
       >More info
     </routerLink>
-    <!-- <routerLink class="btn btn btn-info mt-2" tag="button" :to="'/car/' + id + '/full/'">More info</routerLink> -->
     <hr />
     <router-view></router-view>
   </div>
