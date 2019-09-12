@@ -11,7 +11,8 @@
       :to="{
         name: 'carFull',
         params: { id: id },
-        query: { name: 'Mazda', year: 2019 }
+        query: { name: 'Mazda', year: 2019 },
+        hash: '#scroll'
       }"
       >More info
     </routerLink>
