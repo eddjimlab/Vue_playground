@@ -38,6 +38,13 @@ export default {
     $route(toR) {
       this.id = toR.params["id"];
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    if (window.confirm("Are you sure you want to leave?")) {
+      next();
+    } else {
+      next(false);
+    }
   }
 };
 </script>

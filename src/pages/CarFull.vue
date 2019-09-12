@@ -15,6 +15,14 @@ export default {
     year() {
       return this.$route.query.year;
     }
+  },
+  beforeRouteEnter(to, fromR, next) {
+    if (window.confirm("Are you mechanics?")) {
+      next(true);
+    } else {
+      next(false);
+    }
+    next(false);
   }
 };
 </script>
