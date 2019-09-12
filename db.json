@@ -24,6 +24,16 @@
       "name": "toyota",
       "year": 2000,
       "id": 5
+    },
+    {
+      "name": "Reno",
+      "year": 1999,
+      "id": 6
+    },
+    {
+      "name": "Lilo",
+      "year": 2008,
+      "id": 7
     }
   ]
 }
