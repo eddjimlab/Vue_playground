@@ -9,6 +9,21 @@
       "name": "Audi",
       "year": 2018,
       "id": 2
+    },
+    {
+      "name": "Reno",
+      "year": 2010,
+      "id": 3
+    },
+    {
+      "name": "Ford",
+      "year": 2011,
+      "id": 4
+    },
+    {
+      "name": "toyota",
+      "year": 2000,
+      "id": 5
     }
   ]
 }

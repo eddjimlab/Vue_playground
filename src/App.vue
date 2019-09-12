@@ -62,6 +62,7 @@ export default {
           return response.json();
         })
         .then(cars => {
+          this.cars = cars;
           console.log(cars);
         });
     }
