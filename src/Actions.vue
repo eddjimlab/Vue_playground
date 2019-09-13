@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn btn-success" @click="updateCounter(1)">Add</button>
+    <button class="btn btn-success mr-2" @click="updateCounter(1)">Add</button>
     <button class="btn btn-danger" @click="updateCounter(-1)">Subtract</button>
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   methods: {
     updateCounter(val) {
-      this.$emit("counterUpdated", val);
+      this.$store.state.counter += val;
     }
   }
 };
