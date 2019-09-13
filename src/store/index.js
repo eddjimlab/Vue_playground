@@ -7,5 +7,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   modules: {
     counter
+  },
+  state: {
+    title: "Hello from store"
+  },
+  getters: {
+    title(state) {
+      return state.title + "!!!";
+    }
   }
 });
